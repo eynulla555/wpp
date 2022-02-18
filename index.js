@@ -12,31 +12,20 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if(message.body === '!sim') {
-
-async function sim(){
-		client.sendMessage("994503071506@c.us", "Test");
-let contact_iswa = await client.getContactById("994503071506@c.us");
-console.log(contact_iswa);
-
-}
-sim();
-	}
-
-	if(message.body === '!nar') {
-		async function nar(){
-let contact_iswaa = await client.isRegisteredUser("994705690700@c.us");
-console.log(contact_iswaa);
-		}
-		nar();
-	}
-	if(message.body === '!cin') {
+	
+	if (message.body != null){
 		async function cin(){
-let contact_iswwa = await client.isRegisteredUser("994503071506@c.us");
+let contact_iswwa = await client.isRegisteredUser(message.body + "@c.us");
+
 console.log(contact_iswwa);
 		}
+
+
 		cin();
-	}
+    }
+async function start () {const browser = await puppeteer.launch({
+  args: ['--no-sandbox', '--disable-setuid-sandbox'],
+});}
 });
 
 client.initialize();
